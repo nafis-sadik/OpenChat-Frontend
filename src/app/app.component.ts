@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import './lib/bootstrap5/bootstrap.bundle.min.js';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'OpenMessenger-Frontend';
+  title = 'OpenMessenger';
 }

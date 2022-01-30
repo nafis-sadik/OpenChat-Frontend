@@ -27,9 +27,13 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/app/lib/animate-css/animate.min.css",
+              "src/app/lib/bootstrap5/bootstrap.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/app/lib/bootstrap5/bootstrap.bundle.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -94,9 +98,13 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/app/lib/animate-css/animate.min.css",
+              "src/app/lib/bootstrap5/bootstrap.bundle.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/app/lib/bootstrap5/bootstrap.bundle.min.js"
+            ]
           }
         }
       }
