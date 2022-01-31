@@ -1,6 +1,8 @@
-.login-box {
+.form-container {
     position: relative;
-    width: 400px;
+    max-width: 400px;
+    min-width: 250px;
+    width: 40vw;
     padding: 20px 0px 20px 0px;
     text-align: center;
     color: #252B37;
@@ -12,7 +14,7 @@
 .h-100.row{
     margin-right: 0;
 }
-.login-box:after {
+.form-container:after {
     position: absolute;
     content: "";
     top: 5vw;
@@ -134,7 +136,6 @@
     color: #7881a1;
 }
 
-
 .label{
     font-size: 14px;
     padding: 0px;
@@ -143,17 +144,17 @@
     margin: 15px 0px 5px 15px;
 }
 
-.login-box input[type=date]::-webkit-calendar-picker-indicator {
+.form-container input[type=date]::-webkit-calendar-picker-indicator {
     filter: invert(1);
 }
 
-.login-box input[type=password]{
+.form-container input[type=password]{
     filter: invert(1);
     color: black;
     
 }
 
-.login-box input[type=button]{
+.form-container input[type=button]{
     width: 90%;
     animation: textColor 5s ease infinite;
     background: none;
@@ -163,7 +164,7 @@
     margin: 10px 10px 0px 10px;
 }
 
-.login-box input[type=button]:hover{
+.form-container input[type=button]:hover{
     cursor: pointer;
     margin: 10px 10px 0px 10px;
     animation: buttonGlow 5s ease infinite;
@@ -174,13 +175,13 @@
     margin-left: 25px;
 }
 
-
 .radio-btn {
     position: absolute;
     opacity: 0;
     visibility: hidden;
     color: transparent;
 }
+
 .radio-btn:checked + .label_radio {
     animation: textColor 5s ease infinite;  
 }
@@ -188,7 +189,6 @@
 .radio-btn::before {
     margin-right: 10px;
 }
-
 
 .label_radio {
     display: flex;
