@@ -151,7 +151,6 @@
 .form-container input[type=password]{
     filter: invert(1);
     color: black;
-    
 }
 
 .form-container input[type=button]{

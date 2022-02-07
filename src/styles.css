@@ -8,3 +8,94 @@ body{
     font-family: monospace !important;
     background-color: #1d212b !important;
 }
+
+
+.div-rgb-glow{
+    position: relative;
+    border-radius: 10px;
+    animation: textColor 5s ease infinite;
+}
+
+.div-rgb-glow::after{
+    z-index: -1;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    -webkit-filter: blur(30px);
+    -moz-filter: blur(30px);
+    -ms-filter: blur(30px);
+    filter: blur(30px);
+    background: linear-gradient(270deg, #0fffc1, #7e0fff);
+    background-size: 200% 200%;
+    animation: animateGlow 1s ease infinite;
+}
+
+@keyframes animateGlow {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes textColor {
+    0% {
+        color: #7e0fff;
+    }
+    50% {
+        color: #0fffc1;
+    }
+    100% {
+        color: #7e0fff;
+    }
+}
+
+@keyframes buttonGlow {
+    0% {
+        /* background: #7e0fff; */
+        text-shadow: 0px 0px 5px #7e0fff;
+        color: #7e0fff;
+    }
+    50% {
+        /* background: #0fffc1; */
+
+        text-shadow: 0px 0px 5px #0fffc1;
+        color: #0fffc1;
+    }
+    100% {
+        /* background: #7e0fff; */
+        text-shadow: 0px 0px 5px #7e0fff;
+        color: #7e0fff;
+    }
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100% 0;
+    }
+}
+
+.btn-custom{
+    animation: textColor 5s ease infinite;
+    background: none;
+    outline: none;
+    border: none;
+    background-color: black;
+    border: 1px solid #1d212b;
+}
+
+
+.btn-custom:hover{
+
+    box-shadow: inset 0 0 35px #ccbfa3, 3px 3px 5px 0 #ccc;;
+}
