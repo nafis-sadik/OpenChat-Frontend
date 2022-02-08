@@ -1,5 +1,5 @@
 #HomePage .container div{
-    background-color: #191d2a;
+    background-color: var(--bg-color-2);
     border-radius: 10px;
     padding: 5px 20px;
     margin-top: 5%;

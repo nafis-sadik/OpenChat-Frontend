@@ -6,7 +6,7 @@
     padding: 20px 0px 20px 0px;
     text-align: center;
     color: #252B37;
-    background-color: #191d2a;
+    background-color: var(--bg-color-2);
     animation: textColor 5s ease infinite;
     border-radius: 10px;
     margin: auto;

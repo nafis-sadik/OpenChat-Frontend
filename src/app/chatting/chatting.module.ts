@@ -4,7 +4,7 @@ import { ChatComponent } from './chat/chat.component';
 import { RouterModule } from '@angular/router';
 
 export const routes = [
-  { path : 'chat', component: ChatComponent, pathMatch: 'full' }
+  { path : '', component: ChatComponent, pathMatch: 'full' }
 ]
 
 @NgModule({

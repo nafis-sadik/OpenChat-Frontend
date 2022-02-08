@@ -1,4 +1,4 @@
-<section id="HomePage">
+<section id="HomePage" class="animate__animated animate__fadeIn">
     <div class="container">
         <div class="col-md-12 div-rgb-glow heading">
             <h1>Open Chat</h1>
@@ -13,8 +13,8 @@
                 <li> <b>Frontend</b> : Angular</li>
             </ul>
             <div class="container">
-                <input class="col-md-6 btn-custom" type="button" value="Sign Up">
-                <input class="col-md-6 btn-custom" type="button" value="Log In">
+                <input [routerLink]="['/user/signup']" class="col-md-6 btn-custom" type="button" value="Sign Up">
+                <input [routerLink]="['/user/login']" class="col-md-6 btn-custom" type="button" value="Log In">
             </div>
         </div>
     </div>

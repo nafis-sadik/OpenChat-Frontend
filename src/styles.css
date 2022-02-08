@@ -1,4 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+:root{
+    --bg-color-1: #191d2a;
+    --bg-color-2: #202124;
+    --border-color-1: #1d212b;
+    --btn-bg-color-1: #131010;
+    --btn-bg-color-2: #303134;
+}
+
 html, body {
     margin: 0 auto;
     height: 100%;
@@ -6,7 +14,8 @@ html, body {
 
 body{
     font-family: monospace !important;
-    background-color: #1d212b !important;
+    background-color: var(--bg-color-1) !important;
+    color: blanchedalmond !important;
 }
 
 
@@ -30,7 +39,7 @@ body{
     filter: blur(30px);
     background: linear-gradient(270deg, #0fffc1, #7e0fff);
     background-size: 200% 200%;
-    animation: animateGlow 1s ease infinite;
+    animation: animateGlow 5s ease infinite;
 }
 
 @keyframes animateGlow {
@@ -85,17 +94,34 @@ body{
     }
 }
 
-.btn-custom{
+/* .btn-custom{
     animation: textColor 5s ease infinite;
-    background: none;
     outline: none;
     border: none;
-    background-color: black;
-    border: 1px solid #1d212b;
+    background-color: var(--btn-bg-color-1);
+    border: 1px solid var(--border-color-1);
+    border-radius: 5px;
 }
 
-
 .btn-custom:hover{
+    transition: 2s;
+    background: linear-gradient(270deg, #0fffc1, #7e0fff);
+    background-size: 200% 200%;
+    animation: animateGlowReverse 1s ease infinite;
+    box-shadow: inset 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+} */
 
-    box-shadow: inset 0 0 35px #ccbfa3, 3px 3px 5px 0 #ccc;;
+input[type=button]{
+    animation: textColor 5s ease infinite;
+    background-color: var(--btn-bg-color-1);
+    border: 1px solid var(--border-color-1);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+input[type=button]:hover{
+    transition: 1s;
+    cursor: pointer;
+    animation: buttonGlow 5s ease infinite;
+    background-color: var(--btn-bg-color-2);
 }
