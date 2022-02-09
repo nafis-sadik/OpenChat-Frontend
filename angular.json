@@ -29,7 +29,8 @@
             "styles": [
               "src/styles.css",
               "src/app/lib/animate-css/animate.min.css",
-              "src/app/lib/bootstrap5/bootstrap.min.css"
+              "src/app/lib/bootstrap5/bootstrap.min.css",
+              "node_modules/@ctrl/ngx-emoji-mart/picker.css"
             ],
             "scripts": [
               "src/app/lib/bootstrap5/bootstrap.bundle.min.js"
@@ -100,7 +101,8 @@
             "styles": [
               "src/styles.css",
               "src/app/lib/animate-css/animate.min.css",
-              "src/app/lib/bootstrap5/bootstrap.bundle.min.css"
+              "src/app/lib/bootstrap5/bootstrap.bundle.min.css",
+              "node_modules/@ctrl/ngx-emoji-mart/picker.css"
             ],
             "scripts": [
               "src/app/lib/bootstrap5/bootstrap.bundle.min.js"
