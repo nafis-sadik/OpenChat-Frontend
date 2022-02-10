@@ -94,23 +94,6 @@ body{
     }
 }
 
-/* .btn-custom{
-    animation: textColor 5s ease infinite;
-    outline: none;
-    border: none;
-    background-color: var(--btn-bg-color-1);
-    border: 1px solid var(--border-color-1);
-    border-radius: 5px;
-}
-
-.btn-custom:hover{
-    transition: 2s;
-    background: linear-gradient(270deg, #0fffc1, #7e0fff);
-    background-size: 200% 200%;
-    animation: animateGlowReverse 1s ease infinite;
-    box-shadow: inset 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
-} */
-
 input[type=button], button{
     animation: textColor 5s ease infinite;
     background-color: var(--btn-bg-color-1);
@@ -125,3 +108,24 @@ input[type=button]:hover, button:hover{
     animation: buttonGlow 5s ease infinite;
     background-color: var(--btn-bg-color-2);
 }
+
+/* Works on Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--bg-color-1) var(--btn-bg-color-2);
+  }
+  
+  /* Works on Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  *::-webkit-scrollbar-track {
+    background: var(--btn-bg-color-2);
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background-color: var(--bg-color-1);
+    border-radius: 20px;
+    border: 3px solid var(--btn-bg-color-2);
+  }

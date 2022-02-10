@@ -41,9 +41,9 @@
     padding: 0;
 }
 
-#ChattingArea{
-    background-color: var(--bg-color-1);
-    border-left: 1px solid var(--border-color-1);
+#Messages{
+    height: 100vh;
+    overflow-y: scroll;
 }
 
 #ChatPage{
@@ -51,14 +51,15 @@
 }
 
 #MessageTextBoxSection{
-    position: absolute;
-    top: 100%;
+    position: fixed;
+    bottom: 0;
     width: 98%;
-    transform: translateY(-100%);
     border-top: 1px solid var(--border-color-1);
     height: 8vh;
     padding: 0;
     padding: 5px;
+    background-color: var(--bg-color-1);
+    z-index: 1;
 }
 
 #MessageTextBox{
