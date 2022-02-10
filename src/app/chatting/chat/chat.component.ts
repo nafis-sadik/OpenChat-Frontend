@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class ChatComponent implements OnInit {
 
   public message: string = '';
-  public toggle: string = 'none';
+  public toggle: boolean = false;
 
   constructor() {
   }
@@ -17,16 +17,13 @@ export class ChatComponent implements OnInit {
   }
 
   toggleEmojiWindow(){
-    if(this.toggle == 'none'){
-      this.toggle = 'block';
-    }
-    else{
-      this.toggle = 'none';
-    }
+    if(this.toggle)
+      this.toggle = false;
+    else
+      this.toggle = true;
   }
 
   addEmoji(event: any){
     this.message += event.emoji.native;
   }
-
 }
