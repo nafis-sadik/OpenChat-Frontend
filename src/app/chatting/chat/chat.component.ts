@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { ChatService } from './chat.service';
 
 @Component({
   selector: 'app-chat',
@@ -9,9 +11,7 @@ export class ChatComponent implements OnInit {
 
   public message: string = '';
   public toggle: boolean = false;
-
-  constructor() {
-  }
+  constructor(private chatService: ChatService) { }
 
   ngOnInit(): void {
   }
@@ -25,5 +25,9 @@ export class ChatComponent implements OnInit {
 
   addEmoji(event: any){
     this.message += event.emoji.native;
+  }
+
+  send(message: HTMLInputElement){
+    this.chatService.sendMessage(message.value)
   }
 }

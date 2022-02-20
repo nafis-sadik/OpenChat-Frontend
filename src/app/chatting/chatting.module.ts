@@ -4,6 +4,7 @@ import { ChatComponent } from './chat/chat.component';
 import { RouterModule } from '@angular/router';
 import { PickerModule } from '@ctrl/ngx-emoji-mart';
 import { FormsModule } from '@angular/forms';
+import { ChatService } from './chat/chat.service';
 
 export const routes = [
   { path : '', component: ChatComponent, pathMatch: 'full' }
@@ -18,6 +19,9 @@ export const routes = [
     RouterModule.forChild(routes),
     PickerModule,
     FormsModule
+  ],
+  providers:[
+    ChatService
   ]
 })
 export class ChattingModule { }
