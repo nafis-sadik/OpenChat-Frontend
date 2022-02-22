@@ -44,13 +44,10 @@ body{
 
 .messages{
     background-color: var(--bg-color-2);
-    margin-bottom: 5vh;
     border-radius: 15px;
     border: 1px solid var(--border-color-1);
-    padding: 15px;
     max-width: 50vw;
     min-width: 5vw;
-    display: block;
 }
 
 .sent{
@@ -58,8 +55,7 @@ body{
 }
 
 .received{
-    position: relative;
-    left: 2%;
+  float: left;
 }
 
 @keyframes animateGlow {
@@ -134,16 +130,16 @@ input[type=button]:hover, button:hover{
     scrollbar-width: thin;
     scrollbar-color: var(--bg-color-1) var(--btn-bg-color-2);
   }
-  
+
   /* Works on Chrome, Edge, and Safari */
   *::-webkit-scrollbar {
     width: 12px;
   }
-  
+
   *::-webkit-scrollbar-track {
     background: var(--btn-bg-color-2);
   }
-  
+
   *::-webkit-scrollbar-thumb {
     background-color: var(--bg-color-1);
     border-radius: 20px;

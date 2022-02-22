@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ChatRecord, ChatService } from './chat.service';
+import {catchError} from "rxjs";
 
 @Component({
   selector: 'app-chat',
@@ -12,16 +13,21 @@ export class ChatComponent implements OnInit {
 
   public message: string = '';
   public toggle: boolean = false;
-  public messages: string[] = [];
   private socket: WebSocket;
   constructor() {
-    this.messages.push('Hello World');
-    this.messages.push('Test Message');
     this.socket = new WebSocket("ws://localhost:8080/ws");
-    this.socket.onmessage = function(event: any) {
-      console.log(event.data);
-      // messages.push(event.data);
-      // ChatComponent.messages.push(JSON.parse(event.data).message);
+    this.socket.onmessage = (event: any) => {
+      let msg = JSON.parse(event.data)
+      let messageContainer = document.getElementById('Messages');
+      if(messageContainer != null){
+        if(Math.random() > 0.5){
+          messageContainer.innerHTML += '<div class="received messages">' + msg.message + '</div>';
+        }
+        else{
+          messageContainer.innerHTML += '<div class="sent messages">' + msg.message + '</div>';
+        }
+        messageContainer.innerHTML += '<br>';
+      }
     }
   }
 
@@ -29,10 +35,7 @@ export class ChatComponent implements OnInit {
   }
 
   toggleEmojiWindow(){
-    if(this.toggle)
-      this.toggle = false;
-    else
-      this.toggle = true;
+    this.toggle = !this.toggle;
   }
 
   addEmoji(event: any){
@@ -50,8 +53,5 @@ export class ChatComponent implements OnInit {
     msgObj.message = message.value;
     this.socket.send(JSON.stringify(msgObj));
     message.value = '';
-  }
-
-  public sendMessage = (message: string) => {
   }
 }
