@@ -87,19 +87,6 @@
     float: left;
 }
 
-.messages{
-    background-color: var(--bg-color-2);
-    margin-bottom: 5vh;
-    border-radius: 15px;
-    border: 1px solid var(--border-color-1);
-    padding: 15px;
-    max-width: 50vw;
-}
-
-.sent{
-    float: right;
-}
-
-.received{
-    float: left;
+#Messages{
+    padding-bottom: 5vh;
 }
