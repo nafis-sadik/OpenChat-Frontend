@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ɵɵsetComponentScope } from '@angular/core';
 import { ChatRecord, ChatService } from './chat.service';
 import {catchError} from "rxjs";
 
@@ -15,12 +15,14 @@ export class ChatComponent implements OnInit {
   public toggle: boolean = false;
   private socket: WebSocket;
   constructor() {
-    this.socket = new WebSocket("ws://localhost:8080/ws");
+    localStorage.setItem('userId', String(prompt('Please provide sender id')));
+    localStorage.setItem('receiver', String(prompt('Please provide receiver id')));
+    this.socket = new WebSocket("ws://localhost:8080/connect/" + localStorage.getItem('userId'));
     this.socket.onmessage = (event: any) => {
       let msg = JSON.parse(event.data)
       let messageContainer = document.getElementById('Messages');
       if(messageContainer != null){
-        if(Math.random() > 0.5){
+        if(msg.receiver != null && msg.receiver != localStorage.getItem('userId')){
           messageContainer.innerHTML += '<div class="received messages">' + msg.message + '</div>';
         }
         else{
@@ -46,10 +48,17 @@ export class ChatComponent implements OnInit {
   send(message: HTMLInputElement){
     let msgObj = new ChatRecord();
     let userId = localStorage.getItem('userId');
-    if(userId === null)
-      userId = '521d0b41-cb13-405b-8ab4-1545a12c6bc7';
-    msgObj.sender = userId;
-    msgObj.receiver = '82678b65-25d4-4191-a860-e58e1820cf9c';
+    let receiver = localStorage.getItem('receiver');
+    if(userId == null){
+      alert('Invalid Sender');
+      return
+    }
+    if(receiver == null){
+      alert('Invalid Receiver');
+      return
+    }
+    msgObj.sender = String(userId);
+    msgObj.receiver = receiver;
     msgObj.message = message.value;
     this.socket.send(JSON.stringify(msgObj));
     message.value = '';
